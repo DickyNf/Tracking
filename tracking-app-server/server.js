@@ -1,11 +1,15 @@
-require('dotenv').config(); // Muat variabel lingkungan dari file .env di awal
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors'); // Impor middleware cors
 const app = express();
 const port = 3000;
 
 const authRoutes = require('./src/routes/auth');
 const trackingRoutes = require('./src/routes/tracking');
 const adminRoutes = require('./src/routes/admin');
+
+// Gunakan middleware cors untuk semua rute
+app.use(cors());
 
 app.use(express.json());
 

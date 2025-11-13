@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Tracking System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Sistem Pelacakan Transaksi</h1>
+            <div>
+                <span>Login sebagai: <strong id="userRole"></strong></span>
+                <button id="logoutButton">Logout</button>
+            </div>
+        </header>
+
+        <main id="dashboard-content">
+            <!-- Konten akan diisi oleh JavaScript berdasarkan role -->
+
+            <!-- ================== Tampilan Pegawai ================== -->
+            <div id="pegawai-view" class="role-view" style="display: none;">
+                <h2>Dasbor Pegawai</h2>
+                <div class="card">
+                    <h3>Kirim Laporan Scan</h3>
+                    <form id="scanForm">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="transaction_no">No. Transaksi (dari QR)</label>
+                                <input type="text" id="transaction_no" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="status">Status</label>
+                                <select id="status" required>
+                                    <option value="picked">Picked</option>
+                                    <option value="in_transit">In Transit</option>
+                                    <option value="arrived">Arrived</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="failed">Failed</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="location_name">Nama Lokasi</label>
+                                <input type="text" id="location_name" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="latitude">Latitude</label>
+                                <input type="text" id="latitude" placeholder="Otomatis dari GPS">
+                            </div>
+                             <div class="input-group">
+                                <label for="longitude">Longitude</label>
+                                <input type="text" id="longitude" placeholder="Otomatis dari GPS">
+                            </div>
+                        </div>
+                        <button type="submit">Kirim Laporan</button>
+                        <p id="scan-message" class="message"></p>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Riwayat Scan Saya</h3>
+                    <table id="pegawai-history-table">
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>No. Transaksi</th>
+                                <th>Status</th>
+                                <th>Lokasi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data riwayat akan diisi di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ================== Tampilan Admin View ================== -->
+            <div id="admin_view-view" class="role-view" style="display: none;">
+                <h2>Dasbor Pemantauan Transaksi</h2>
+                <div class="card">
+                    <h3>Filter Transaksi</h3>
+                    <form id="admin-filter-form" class="form-grid">
+                        <div class="input-group">
+                            <label for="filter-status">Status</label>
+                            <select id="filter-status">
+                                <option value="">Semua</option>
+                                <option value="picked">Picked</option>
+                                <option value="in_transit">In Transit</option>
+                                <option value="arrived">Arrived</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="failed">Failed</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="filter-pegawai">Pegawai</label>
+                            <input type="text" id="filter-pegawai" placeholder="Nama username pegawai">
+                        </div>
+                        <div class="input-group">
+                             <label for="filter-date">Tanggal</label>
+                            <input type="date" id="filter-date">
+                        </div>
+                        <button type="submit">Filter</button>
+                    </form>
+                </div>
+                <div class="card">
+                    <h3>Daftar Transaksi</h3>
+                    <table id="admin-transactions-table">
+                        <thead>
+                            <tr>
+                                <th>No. Transaksi</th>
+                                <th>Status Terakhir</th>
+                                <th>Update Terakhir</th>
+                                <th>Oleh</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data transaksi akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Modal untuk Detail Transaksi -->
+            <div id="details-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3 id="modal-title">Detail Transaksi: </h3>
+                    <div id="modal-body">
+                        <!-- Timeline akan dimuat di sini -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================== Tampilan Admin Auth ================== -->
+            <div id="admin_auth-view" class="role-view" style="display: none;">
+                <div class="card">
+                    <h2>Tindakan Otorisasi</h2>
+                    <p>Daftar pembaruan berikut memerlukan persetujuan Anda.</p>
+                    <table id="admin-auth-table">
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>No. Transaksi</th>
+                                <th>Status Baru</th>
+                                <th>Oleh</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data otorisasi akan dimuat di sini -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
