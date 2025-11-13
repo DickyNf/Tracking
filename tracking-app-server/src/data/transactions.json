@@ -1,0 +1,18 @@
+[
+  {
+    "transaction_no": "TRX001",
+    "customer_name": "Andi",
+    "destination": "Jakarta",
+    "estimated_date": "2023-12-15",
+    "current_status": "picked",
+    "last_update": "2023-12-10T10:00:00Z"
+  },
+  {
+    "transaction_no": "TRX002",
+    "customer_name": "Budi",
+    "destination": "Surabaya",
+    "estimated_date": "2023-12-16",
+    "current_status": "in_transit",
+    "last_update": "2023-12-10T11:30:00Z"
+  }
+]

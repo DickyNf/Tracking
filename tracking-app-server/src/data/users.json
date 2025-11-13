@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "username": "pegawai1",
+    "password": "$2b$10$1fR1DxOL0knDEGv3jpyBMuNrJkit9kuVWU6UPqvxrNb2353fhqvNm",
+    "role": "pegawai"
+  },
+  {
+    "id": 2,
+    "username": "adminview",
+    "password": "$2b$10$1fR1DxOL0knDEGv3jpyBMuNrJkit9kuVWU6UPqvxrNb2353fhqvNm",
+    "role": "admin_view"
+  },
+  {
+    "id": 3,
+    "username": "adminauth",
+    "password": "$2b$10$1fR1DxOL0knDEGv3jpyBMuNrJkit9kuVWU6UPqvxrNb2353fhqvNm",
+    "role": "admin_auth"
+  }
+]

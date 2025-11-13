@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "transaction_no": "TRX001",
+    "status": "picked",
+    "location_name": "Gudang Pusat",
+    "latitude": -6.175392,
+    "longitude": 106.827153,
+    "scanned_by": "pegawai1",
+    "scanned_at": "2023-12-10T10:00:00Z",
+    "authorized": false
+  },
+  {
+    "id": 2,
+    "transaction_no": "TRX002",
+    "status": "in_transit",
+    "location_name": "Gerbang Tol Cikampek",
+    "latitude": -6.3218,
+    "longitude": 107.2894,
+    "scanned_by": "pegawai1",
+    "scanned_at": "2023-12-10T11:30:00Z",
+    "authorized": false
+  }
+]
